@@ -34,12 +34,19 @@ class RogueEnv(gym.Env):
         :param RogueAcerFlags flags:
             registration flags
         """
+        """
         gym.envs.register('Rogue-v1',
                           entry_point='envs.rogue:RogueEnv', trials=flags.episodes_for_evaluation,
                           reward_threshold=None, local_only=True,
                           kwargs=dict(flags=flags), nondeterministic=True,
                           tags=None, max_episode_steps=flags.max_episode_len,
-                          max_episode_seconds=None, timestep_limit=None)
+                          max_episode_seconds=None, timestep_limit=None)"""
+
+        gym.envs.register('Rogue-v1',
+                          entry_point='envs.rogue:RogueEnv',
+                          reward_threshold=None,
+                          kwargs=dict(flags=flags), nondeterministic=True,
+                          tags=None, max_episode_steps=flags.max_episode_len)
 
     def __init__(self, flags=RogueAcerFlags()):
         evaluator = AmuletLevelsRogueEvaluator(max_step_count=flags.max_episode_len,
