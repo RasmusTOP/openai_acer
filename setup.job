@@ -15,15 +15,15 @@ virtualenv -p $(which python) venv
 source venv/bin/activate
 
 # build and install required packages
-cd automake-1.14
-./configure --prefix=$PWD/../venv
-make
-make install
+#cd automake-1.14
+#./configure --prefix=$PWD/../venv
+#make
+#make install
 
-cd ../autoconf-2.69
-./configure --prefix=$PWD/../venv
-make
-make install
+#cd ../autoconf-2.69
+#./configure --prefix=$PWD/../venv
+#make
+#make install
 
 # run makefile to install Python packages and other tasks
 cd ../
