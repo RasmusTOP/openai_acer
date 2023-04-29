@@ -26,6 +26,6 @@ source venv/bin/activate
 #make install
 
 # run makefile to install Python packages and other tasks
-cd ../
+#cd ../
 make
 
