@@ -423,6 +423,7 @@ def learn(policy, env, flags):
     else:
         buffer = None
     nbatch = nenvs*flags.nsteps
+    print("Saving at t1=%s" % nbatch)
     acer = Acer(runner, model, buffer, flags.log_interval, flags.stats_interval)
 
     saver = tf.train.Saver(max_to_keep=3, keep_checkpoint_every_n_hours=flags.permanent_save_hours)
@@ -459,6 +460,8 @@ def learn(policy, env, flags):
 
         # on policy training
         acer.call(on_policy=True)
+
+        print("Saving at t2=%s" % nbatch)
 
         # off policy training
         if flags.replay_ratio > 0 and buffer.has_atleast(flags.replay_start):

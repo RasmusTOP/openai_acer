@@ -1,1 +1,24 @@
 Logging to save
+-------------------------------------
+| avg_norm_adj        | 0.000384    |
+| avg_norm_g          | 0.244       |
+| avg_norm_grads_f    | 0.244       |
+| avg_norm_k          | 2.23        |
+| avg_norm_k_dot_g    | 0.241       |
+| entropy             | 1.59        |
+| explained_variance  | 0.636       |
+| fph                 | 70.08M      |
+| fps                 | 19465       |
+| loss                | -0.0377     |
+| loss_bc             | -0          |
+| loss_f              | -0.0228     |
+| loss_policy         | -0.0228     |
+| loss_q              | 0.00219     |
+| mean_episode_length | 500         |
+| mean_episode_reward | 1.25        |
+| norm_grads          | 0.0226      |
+| norm_grads_policy   | 0.00652     |
+| norm_grads_q        | 0.0209      |
+| time                | 06-12 00:54 |
+| total_timesteps     | 2592000     |
+-------------------------------------

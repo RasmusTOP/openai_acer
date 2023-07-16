@@ -14,6 +14,8 @@ class Towers_LSTM(Model):
     def __init__(self, sess, ob_space, ac_space, nenv, nsteps, nstack, reuse=False):
         super().__init__(sess, ob_space, ac_space, nenv, nsteps, nstack, reuse=reuse)
         nbatch = nenv * nsteps
+        print(nenv, nsteps, "Lstm ", nbatch)
+        print(nbatch)
         nh, nw, nc = ob_space.shape
         ob_shape = (nbatch, nh, nw, nc * nstack)
         nact = ac_space.n

@@ -10,9 +10,15 @@ from baselines.common import explained_variance
 
 class Model(object):
     def __init__(self, *, policy, ob_space, ac_space, nbatch_act, nbatch_train,
-                nsteps, ent_coef, vf_coef, max_grad_norm):
-        sess = tf.get_default_session()
-
+                nsteps, ent_coef, vf_coef, max_grad_norm, num_procs):
+        config = tf.ConfigProto(allow_soft_placement=True,
+                                intra_op_parallelism_threads=num_procs,
+                                inter_op_parallelism_threads=num_procs,
+                                gpu_options=tf.GPUOptions(allow_growth=True))
+        self.sess = sess = tf.Session(config=config)
+        print("Initial nsteps=%s" % nsteps)
+        print("Initial nbth_a=%s" % nbatch_act)
+        print("Initial nbth_t=%s" % nbatch_train)
         act_model = policy(sess, ob_space, ac_space, nbatch_act, 1, 4, reuse=False)
         train_model = policy(sess, ob_space, ac_space, nbatch_train, nsteps, 4, reuse=True)
 
@@ -49,13 +55,25 @@ class Model(object):
         _train = trainer.apply_gradients(grads)
 
         def train(lr, cliprange, obs, returns, masks, actions, values, neglogpacs, states=None):
+            print(obs.shape, "obs leng a rnnr rn:", len(obs))
+            #print("lr:", lr)
+            #print("cliprange:", cliprange)
+            #print("obs:", obs)
+            #print("returns:", returns)
+            #print("masks:", masks)
+            #print("actions:", actions)
+            #print("values:", values)
+            #print("neglogpacs:", neglogpacs)
             advs = returns - values
             advs = (advs - advs.mean()) / (advs.std() + 1e-8)
+            #print("advs:", advs)
             td_map = {train_model.X:obs, A:actions, ADV:advs, R:returns, LR:lr,
                     CLIPRANGE:cliprange, OLDNEGLOGPAC:neglogpacs, OLDVPRED:values}
+            #print("td_map:", td_map)
             if states is not None:
                 td_map[train_model.S] = states
                 td_map[train_model.M] = masks
+                #print("td_map:", td_map)
             return sess.run(
                 [pg_loss, vf_loss, entropy, approxkl, clipfrac, _train],
                 td_map
@@ -82,6 +100,7 @@ class Model(object):
         self.initial_state = act_model.initial_state
         self.save = save
         self.load = load
+
         tf.global_variables_initializer().run(session=sess) #pylint: disable=E1101
 
 class Runner(object):
@@ -89,11 +108,15 @@ class Runner(object):
     def __init__(self, *, env, model, nsteps, gamma, lam):
         self.env = env
         self.model = model
+        print("Runner Init num_envs=%s" % env.num_envs)
         nenv = env.num_envs
+        print("Runner Init nenv=%s" % nsteps)
         self.obs = np.zeros((nenv,) + env.observation_space.shape, dtype=model.train_model.X.dtype.name)
         self.obs[:] = env.reset()
+        print(self.obs.shape, "obs leng init rnnr:", len(self.obs))
         self.gamma = gamma
         self.lam = lam
+        print("Runner Init nsteps=%s" % nsteps)
         self.nsteps = nsteps
         self.states = model.initial_state
         self.dones = [False for _ in range(nenv)]
@@ -102,20 +125,23 @@ class Runner(object):
         mb_obs, mb_rewards, mb_actions, mb_values, mb_dones, mb_neglogpacs = [],[],[],[],[],[]
         mb_states = self.states
         epinfos = []
+        print("Runner run before loop1 s.nsteps=%s" % self.nsteps)
         for _ in range(self.nsteps):
             actions, values, self.states, neglogpacs = self.model.step(self.obs, self.states, self.dones)
             mb_obs.append(self.obs.copy())
+            print("obs leng run fr:", len(mb_obs))
             mb_actions.append(actions)
             mb_values.append(values)
             mb_neglogpacs.append(neglogpacs)
             mb_dones.append(self.dones)
             self.obs[:], rewards, self.dones, infos = self.env.step(actions)
             for info in infos:
-                maybeepinfo = info.get('episode')
+                maybeepinfo = info.get_episode()
                 if maybeepinfo: epinfos.append(maybeepinfo)
             mb_rewards.append(rewards)
         #batch of steps to batch of rollouts
         mb_obs = np.asarray(mb_obs, dtype=self.obs.dtype)
+        print(mb_obs.shape,"obs leng a fr:", len(mb_obs))
         mb_rewards = np.asarray(mb_rewards, dtype=np.float32)
         mb_actions = np.asarray(mb_actions)
         mb_values = np.asarray(mb_values, dtype=np.float32)
@@ -126,6 +152,7 @@ class Runner(object):
         mb_returns = np.zeros_like(mb_rewards)
         mb_advs = np.zeros_like(mb_rewards)
         lastgaelam = 0
+        print("Runner run before loop2 s.nsteps=%s" % self.nsteps)
         for t in reversed(range(self.nsteps)):
             if t == self.nsteps - 1:
                 nextnonterminal = 1.0 - self.dones
@@ -136,6 +163,7 @@ class Runner(object):
             delta = mb_rewards[t] + self.gamma * nextvalues * nextnonterminal - mb_values[t]
             mb_advs[t] = lastgaelam = delta + self.gamma * self.lam * nextnonterminal * lastgaelam
         mb_returns = mb_advs + mb_values
+        print(mb_obs.shape,"obs leng rtn:", len(mb_obs))
         return (*map(sf01, (mb_obs, mb_returns, mb_dones, mb_actions, mb_values, mb_neglogpacs)),
             mb_states, epinfos)
 # obs, returns, masks, actions, values, neglogpacs, states = runner.run()
@@ -161,21 +189,24 @@ def learn(*, policy, env, nsteps, total_timesteps, ent_coef, lr,
     if isinstance(cliprange, float): cliprange = constfn(cliprange)
     else: assert callable(cliprange)
     total_timesteps = int(total_timesteps)
-
+    print("LEARN Init nenvS=%s" % nsteps)
     nenvs = env.num_envs
     ob_space = env.observation_space
     ac_space = env.action_space
+    print("beofore calc in learn=%s" % nsteps)
     nbatch = nenvs * nsteps
+    print("Learn nbth_norm=%s" % nbatch)
     nbatch_train = nbatch // nminibatches
-
+    print("Learn nbth_t=%s" % nbatch_train)
     make_model = lambda : Model(policy=policy, ob_space=ob_space, ac_space=ac_space, nbatch_act=nenvs, nbatch_train=nbatch_train,
                     nsteps=nsteps, ent_coef=ent_coef, vf_coef=vf_coef,
-                    max_grad_norm=max_grad_norm)
+                    max_grad_norm=max_grad_norm, num_procs=nenvs)
     if save_interval and logger.get_dir():
         import cloudpickle
         with open(osp.join(logger.get_dir(), 'make_model.pkl'), 'wb') as fh:
             fh.write(cloudpickle.dumps(make_model))
     model = make_model()
+    print("Before runner call Runner nsteps=%s" % nsteps)
     runner = Runner(env=env, model=model, nsteps=nsteps, gamma=gamma, lam=lam)
 
     epinfobuf = deque(maxlen=100)
@@ -183,15 +214,22 @@ def learn(*, policy, env, nsteps, total_timesteps, ent_coef, lr,
 
     nupdates = total_timesteps//nbatch
     for update in range(1, nupdates+1):
+        print("Learn before ?? nbth_norm=%s" % nbatch)
+        print("Learn before ?? nbth_t=%s" % nbatch_train)
         assert nbatch % nminibatches == 0
+        print("Learn after ?? nbth_norm=%s" % nbatch)
+        print("Learn after ?? nbth_t=%s" % nbatch_train)
         nbatch_train = nbatch // nminibatches
+        print("Learn after ?? + adj nbth_t=%s" % nbatch_train)
         tstart = time.time()
         frac = 1.0 - (update - 1.0) / nupdates
         lrnow = lr(frac)
         cliprangenow = cliprange(frac)
         obs, returns, masks, actions, values, neglogpacs, states, epinfos = runner.run() #pylint: disable=E0632
+        print(obs.shape,"obs leng a rnnr rn:", len(obs))
         epinfobuf.extend(epinfos)
         mblossvals = []
+        print("LEARN BEFORE ASS nenvS=%s" % nsteps)
         if states is None: # nonrecurrent version
             inds = np.arange(nbatch)
             for _ in range(noptepochs):
@@ -203,16 +241,22 @@ def learn(*, policy, env, nsteps, total_timesteps, ent_coef, lr,
                     mblossvals.append(model.train(lrnow, cliprangenow, *slices))
         else: # recurrent version
             assert nenvs % nminibatches == 0
+            print("LEARN AFTER ASS nenvS=%s" % nsteps)
             envsperbatch = nenvs // nminibatches
             envinds = np.arange(nenvs)
+            print("LEARN AFTER ARRANGE 1 nenvS=%s" % nsteps)
+            print("before learn calcs nsteps=%s" % nsteps)
             flatinds = np.arange(nenvs * nsteps).reshape(nenvs, nsteps)
+            print("LEARN AFTER ARRANGE 2 nenvS=%s" % nsteps)
             envsperbatch = nbatch_train // nsteps
             for _ in range(noptepochs):
                 np.random.shuffle(envinds)
                 for start in range(0, nenvs, envsperbatch):
+                    print("LEARN IN DOUBLE LOOP nenvS=%s" % nsteps)
                     end = start + envsperbatch
                     mbenvinds = envinds[start:end]
                     mbflatinds = flatinds[mbenvinds].ravel()
+                    print("obs leng:", len(obs))
                     slices = (arr[mbflatinds] for arr in (obs, returns, masks, actions, values, neglogpacs))
                     mbstates = states[mbenvinds]
                     mblossvals.append(model.train(lrnow, cliprangenow, *slices, mbstates))
@@ -220,6 +264,8 @@ def learn(*, policy, env, nsteps, total_timesteps, ent_coef, lr,
         lossvals = np.mean(mblossvals, axis=0)
         tnow = time.time()
         fps = int(nbatch / (tnow - tstart))
+        print("Learn before upd nbth_norm=%s" % nbatch)
+        print("Learn before upd nbth_t=%s" % nbatch_train)
         if update % log_interval == 0 or update == 1:
             ev = explained_variance(values, returns)
             logger.logkv("serial_timesteps", update*nsteps)

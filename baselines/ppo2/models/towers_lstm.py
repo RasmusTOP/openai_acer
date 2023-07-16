@@ -14,16 +14,23 @@ class Towers_LSTM:
     depth = 2
 
     def __init__(self, sess, ob_space, ac_space, nenv, nsteps, nstack, reuse=False):
-        nbatch = nenv * nsteps
+        nbatch = nenv
+        nenv = nenv // nsteps
+        print(nenv, nsteps, "Lstm ", nbatch)
         nh, nw, nc = ob_space.shape
-        ob_shape = (nbatch, nh, nw, nc * nstack)
+        #nc = nc // nstack
+        #ob_shape = (nbatch, nh, nw, nc * nstack)
+        ob_shape = (nbatch, nh, nw, nc)
+        print(ob_shape, "ob_shape leng init rnnr:", len(ob_shape))
         nact = ac_space.n
         nlstm = self.lstm_units
         X = tf.placeholder(tf.uint8, ob_shape)  # obs
+        print(X.shape, "X1 leng init rnnr:")
         M = tf.placeholder(tf.float32, [nbatch]) #mask (done t-1)
         S = tf.placeholder(tf.float32, [nenv, nlstm*2]) #states
         with tf.variable_scope("model", reuse=reuse):
             X = tf.cast(X, tf.float32)
+            print(X.shape, "X2 leng init rnnr:")
             with tf.variable_scope("Towers", reuse=reuse):
                 with tf.variable_scope("tower_1"):
                     tower1 = tf.layers.conv2d(inputs=X, filters=64, kernel_size=(3, 3), strides=(1, 1),
@@ -72,6 +79,7 @@ class Towers_LSTM:
         def value(ob, state, mask):
             return sess.run(v0, {X: ob, S: state, M: mask})
 
+        print(X.shape, "X3 leng init rnnr:")
         self.X = X
         self.M = M
         self.S = S
