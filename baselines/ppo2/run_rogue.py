@@ -25,12 +25,13 @@ def main():
 
     set_global_seeds(flags.seed)
     policy_fn = models.get(flags.policy)
-    ppo2.learn(policy=policy_fn, env=env, nsteps=128, nminibatches=4,
-               lam=0.95, gamma=0.99, noptepochs=4, log_interval=1,
-               ent_coef=.01,
-               lr=lambda f: f * 2.5e-4,
-               cliprange=lambda f: f * 0.1,
-               total_timesteps=int(1e8 * 1.1))
+    ppo2.learn(policy=policy_fn, env=env, nsteps=flags.nsteps, nminibatches=4,
+               lam=flags.lam, gamma=flags.gamma, noptepochs=flags.noptepochs, log_interval=flags.log_interval,
+               ent_coef=flags.ent_coef,
+               lr=lambda f: f * flags.lr,
+               cliprange=lambda f: f * flags.cliprange,
+               total_timesteps=flags.total_timesteps, vf_coef=flags.vf_coef, max_grad_norm=flags.max_grad_norm)
+    env.close()
 '''
     ppo2.learn(policy_fn=policy_fn, env=env, total_timesteps=flags.total_timesteps, nsteps=flags.nsteps,
                nminibatches=flags.nminibatches, lam=flags.lam, gamma=flags.gamma, noptepochs=flags.noptepochs,

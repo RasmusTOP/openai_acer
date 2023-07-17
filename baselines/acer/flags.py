@@ -98,8 +98,10 @@ class AcerFlags:
                     cast_type = type(getattr(flags, key))
                     try:
                         if cast_type == int:
+                            warnings.warn('Unrecognized section 1')
                             casted_val = round(float(val))
                         elif cast_type == bool:
+                            warnings.warn('Unrecognized section 2')
                             if val == 'False':
                                 casted_val = False
                             elif val == 'True':
@@ -107,6 +109,7 @@ class AcerFlags:
                             else:
                                 raise ValueError('bool string is not either "False" or "True"')
                         else:
+                            warnings.warn('Unrecognized section 3')
                             casted_val = cast_type(val)
                     except ValueError:
                         raise ValueError('[%s] flag "%s" is of incompatiple value: %s. Expected %s.'

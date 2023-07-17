@@ -1,6 +1,7 @@
 import configparser
 import warnings
-
+import ast
+import math
 
 class PPOFlags:
 
@@ -40,6 +41,15 @@ class PPOFlags:
         # Batch size for each update
         self.batch_size = 32
 
+        self.nminibatches = 32
+        self.lam = 0.95
+        self.noptepochs = 10
+        self.ent_coef = 0.01
+        self.lr = 7e-4
+        self.cliprange = 0.1
+        self.total_timesteps = 100000000
+        self.max_grad_norm = 10
+
         # Logging directory
         self.log_dir = 'save'
         # Logging interval in number of batches
@@ -70,7 +80,7 @@ class PPOFlags:
         flags = cls()
 
         for sec in config.sections():
-            if not sec in cls.CFG_sections:
+            if sec not in cls.CFG_sections:
                 warnings.warn('Unrecognized section [%s]' % sec)
                 continue
             for key, val in config.items(sec):
@@ -91,8 +101,45 @@ class PPOFlags:
                         else:
                             casted_val = cast_type(val)
                     except ValueError:
-                        raise ValueError('[%s] flag "%s" is of incompatible value: %s. Expected %s.'
+                        raise ValueError('[%s] flag "%s" has an incompatible value: %s. Expected %s.'
                                          % (sec, key, val, cast_type))
                     setattr(flags, key, casted_val)
 
         return flags
+"""
+    def from_cfg(cls, path):
+        config = configparser.ConfigParser()
+        config.read(path)
+
+        flags = cls()
+
+        for sec in config.sections():
+            if not sec in cls.CFG_sections:
+                warnings.warn('Unrecognized section [%s]' % sec)
+                continue
+            for key, val in config.items(sec):
+                if not hasattr(flags, key):
+                    warnings.warn('Unrecognized [%s] flag in "%s" with value: %s' % (sec, key, val))
+                else:
+                    cast_type = type(getattr(flags, key))
+                    try:
+                        if cast_type == int:
+                            warnings.warn('Unrecognized section 1')
+                            casted_val = round(float(val))
+                        elif cast_type == bool:
+                            warnings.warn('Unrecognized section 2')
+                            if val == 'False':
+                                casted_val = False
+                            elif val == 'True':
+                                casted_val = True
+                            else:
+                                raise ValueError('bool string is not either "False" or "True"')
+                        else:
+                            warnings.warn('Unrecognized section 3')
+                            casted_val = cast_type(val)
+                    except ValueError:
+                        raise ValueError('[%s] flag "%s" is of incompatiple value: %s. Expected %s.'
+                                         % (sec, key, val, cast_type))
+                    setattr(flags, key, casted_val)
+
+        return flags"""
