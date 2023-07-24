@@ -1,11 +1,15 @@
 import os
 import time
+import signal
 import joblib
+import logging
 import numpy as np
 import os.path as osp
 import tensorflow as tf
 from baselines import logger
 from collections import deque
+from baselines.common import set_global_seeds
+from baselines.common import tf_decay, tf_util
 from baselines.common import explained_variance
 
 class Model(object):
@@ -51,6 +55,8 @@ class Model(object):
         if max_grad_norm is not None:
             grads, _grad_norm = tf.clip_by_global_norm(grads, max_grad_norm)
         grads = list(zip(grads, params))
+        self.GS = GS = tf.train.get_global_step() or tf.train.create_global_step()
+        self.GSwrapper = tf_util.VariableWrapper(GS)
         trainer = tf.train.AdamOptimizer(learning_rate=LR, epsilon=1e-5)
         _train = trainer.apply_gradients(grads)
 
@@ -182,7 +188,7 @@ def constfn(val):
 def learn(*, policy, env, nsteps, total_timesteps, ent_coef, lr,
             vf_coef=0.5,  max_grad_norm=0.5, gamma=0.99, lam=0.95,
             log_interval=10, nminibatches=4, noptepochs=4, cliprange=0.2,
-            save_interval=0):
+            save_interval=0, flags):
 
     if isinstance(lr, float): lr = constfn(lr)
     else: assert callable(lr)
@@ -201,19 +207,46 @@ def learn(*, policy, env, nsteps, total_timesteps, ent_coef, lr,
     make_model = lambda : Model(policy=policy, ob_space=ob_space, ac_space=ac_space, nbatch_act=nenvs, nbatch_train=nbatch_train,
                     nsteps=nsteps, ent_coef=ent_coef, vf_coef=vf_coef,
                     max_grad_norm=max_grad_norm, num_procs=nenvs)
-    if save_interval and logger.get_dir():
-        import cloudpickle
-        with open(osp.join(logger.get_dir(), 'make_model.pkl'), 'wb') as fh:
-            fh.write(cloudpickle.dumps(make_model))
+    #if save_interval and logger.get_dir():
+    #    import cloudpickle
+    #    with open(osp.join(logger.get_dir(), 'make_model.pkl'), 'wb') as fh:
+    #        fh.write(cloudpickle.dumps(make_model))
     model = make_model()
-    #print("Before runner call Runner nsteps=%s" % nsteps)
-    runner = Runner(env=env, model=model, nsteps=nsteps, gamma=gamma, lam=lam)
 
+    #print("Before runner call Runner nsteps=%s"% nsteps)
+    runner = Runner(env=env, model=model, nsteps=nsteps, gamma=gamma, lam=lam)
+    saver = tf.train.Saver(max_to_keep=3, keep_checkpoint_every_n_hours=flags.permanent_save_hours)
+    checkpoint_dir = os.path.join(flags.save_dir, 'checkpoints')
+    checkpoint_path = os.path.join(checkpoint_dir, 'model')
+    os.makedirs(checkpoint_dir, exist_ok=True)
+
+    latest_checkpoint = tf.train.latest_checkpoint(checkpoint_dir)
+    if latest_checkpoint:
+        print("Loading model checkpoint: {}".format(latest_checkpoint))
+        saver.restore(model.sess, latest_checkpoint)
+        start_steps = model.GSwrapper.get(model.sess)
+        model.curent_timestep = start_steps
+        if hasattr(env, 'restore_state'):
+            env.restore_state(checkpoint_dir, start_steps)
+    else:
+        start_steps = 0
+        model.curent_timestep = start_steps
+    coordinator = tf.train.Coordinator()
+    #print("Stop...")
+    def signal_handler(signal, frame):
+        if not coordinator.should_stop():
+            coordinator.request_stop()
+            print("Stopping training...")
+        else:
+            print("Stop already requested, please wait...")
+    #print("Stop...that...")
     epinfobuf = deque(maxlen=100)
     tfirststart = time.time()
-
+    signal.signal(signal.SIGINT, signal_handler)
     nupdates = total_timesteps//nbatch
-    for update in range(1, nupdates+1):
+    start_updates = start_steps//nbatch
+    #print("Stop...that...shit...%s" % nbatch)
+    for update in range(start_updates+1, nupdates+1):
         #print("Learn before ?? nbth_norm=%s" % nbatch)
         #print("Learn before ?? nbth_t=%s" % nbatch_train)
         assert nbatch % nminibatches == 0
@@ -230,12 +263,14 @@ def learn(*, policy, env, nsteps, total_timesteps, ent_coef, lr,
         epinfobuf.extend(epinfos)
         mblossvals = []
         #print("LEARN BEFORE ASS nenvS=%s" % nsteps)
+        #print("Stop...that...shit...now%s" % update)
         if states is None: # nonrecurrent version
             inds = np.arange(nbatch)
             for _ in range(noptepochs):
                 np.random.shuffle(inds)
                 for start in range(0, nbatch, nbatch_train):
                     end = start + nbatch_train
+                    #print("Stop...that...shit...now2  %s" % update)
                     mbinds = inds[start:end]
                     slices = (arr[mbinds] for arr in (obs, returns, masks, actions, values, neglogpacs))
                     mblossvals.append(model.train(lrnow, cliprangenow, *slices))
@@ -260,7 +295,8 @@ def learn(*, policy, env, nsteps, total_timesteps, ent_coef, lr,
                     slices = (arr[mbflatinds] for arr in (obs, returns, masks, actions, values, neglogpacs))
                     mbstates = states[mbenvinds]
                     mblossvals.append(model.train(lrnow, cliprangenow, *slices, mbstates))
-
+                    #print("LEARN IN DOUBLE LOOP gggg nenvS=%s" % nsteps)
+        model.curent_timestep += nbatch
         lossvals = np.mean(mblossvals, axis=0)
         tnow = time.time()
         fps = int(nbatch / (tnow - tstart))
@@ -279,12 +315,22 @@ def learn(*, policy, env, nsteps, total_timesteps, ent_coef, lr,
             for (lossval, lossname) in zip(lossvals, model.loss_names):
                 logger.logkv(lossname, lossval)
             logger.dumpkvs()
-        if save_interval and (update % save_interval == 0 or update == 1) and logger.get_dir():
+        do_save = (update % save_interval == 0) or (update == 1) or coordinator.should_stop()
+        if do_save and logger.get_dir():
             checkdir = osp.join(logger.get_dir(), 'checkpoints')
             os.makedirs(checkdir, exist_ok=True)
-            savepath = osp.join(checkdir, '%.5i'%update)
+            #savepath = osp.join(checkdir, '%.5i'%update)
+
+            save_steps = update + nbatch
+            print("Saving at t=%s" % model.curent_timestep)
+            model.GSwrapper.set(model.sess, model.curent_timestep)
+            saver.save(model.sess, save_path=checkpoint_path, global_step=model.curent_timestep)
             #print('Saving to', savepath)
-            model.save(savepath)
+            #model.save(savepath)
+            if hasattr(env, 'save_state'):
+                env.save_state(checkpoint_dir, model.curent_timestep)
+        if coordinator.should_stop():
+            break
     env.close()
 
 def safemean(xs):

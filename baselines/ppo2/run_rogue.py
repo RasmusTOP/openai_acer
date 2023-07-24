@@ -30,7 +30,9 @@ def main():
                ent_coef=flags.ent_coef,
                lr=lambda f: f * flags.lr,
                cliprange=lambda f: f * flags.cliprange,
-               total_timesteps=flags.total_timesteps, vf_coef=flags.vf_coef, max_grad_norm=flags.max_grad_norm)
+               total_timesteps=flags.total_timesteps, vf_coef=flags.vf_coef, max_grad_norm=flags.max_grad_norm,
+               flags=flags, save_interval=flags.save_interval)
+
     env.close()
 '''
     ppo2.learn(policy_fn=policy_fn, env=env, total_timesteps=flags.total_timesteps, nsteps=flags.nsteps,
