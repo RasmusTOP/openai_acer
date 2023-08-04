@@ -1,0 +1,1358 @@
+Logging to save
+-------------------------------------
+| avg_norm_adj        | 0.628       |
+| avg_norm_g          | 6.44        |
+| avg_norm_grads_f    | 6.09        |
+| avg_norm_k          | 2.41        |
+| avg_norm_k_dot_g    | 5.92        |
+| entropy             | 0.478       |
+| explained_variance  | 0.293       |
+| fph                 | 6194.39M    |
+| fps                 | 1720665     |
+| loss                | 1.31        |
+| loss_bc             | -0          |
+| loss_f              | -0.0702     |
+| loss_policy         | -0.0702     |
+| loss_q              | 2.77        |
+| mean_episode_length | 0           |
+| mean_episode_reward | 0           |
+| norm_grads          | 2.04        |
+| norm_grads_policy   | 1.23        |
+| norm_grads_q        | 1.95        |
+| time                | 07-30 18:33 |
+| total_timesteps     | 23904000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.512       |
+| avg_norm_g          | 3.17        |
+| avg_norm_grads_f    | 2.84        |
+| avg_norm_k          | 2.6         |
+| avg_norm_k_dot_g    | 3.53        |
+| entropy             | 0.719       |
+| explained_variance  | 0.6         |
+| fph                 | 70.60M      |
+| fps                 | 19612       |
+| loss                | 0.135       |
+| loss_bc             | -0.000234   |
+| loss_f              | -0.205      |
+| loss_policy         | -0.205      |
+| loss_q              | 0.694       |
+| mean_episode_length | 333         |
+| mean_episode_reward | 13.2        |
+| norm_grads          | 1.31        |
+| norm_grads_policy   | 0.424       |
+| norm_grads_q        | 1.26        |
+| time                | 07-30 18:54 |
+| total_timesteps     | 24000000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.634       |
+| avg_norm_g          | 4.67        |
+| avg_norm_grads_f    | 4.28        |
+| avg_norm_k          | 2.64        |
+| avg_norm_k_dot_g    | 5.07        |
+| entropy             | 0.511       |
+| explained_variance  | 0.371       |
+| fph                 | 24.28M      |
+| fps                 | 6744        |
+| loss                | 0.667       |
+| loss_bc             | -0.0003     |
+| loss_f              | -0.235      |
+| loss_policy         | -0.236      |
+| loss_q              | 1.82        |
+| mean_episode_length | 281         |
+| mean_episode_reward | 14.5        |
+| norm_grads          | 3.56        |
+| norm_grads_policy   | 0.769       |
+| norm_grads_q        | 3.62        |
+| time                | 07-30 19:33 |
+| total_timesteps     | 24096000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.698       |
+| avg_norm_g          | 4.73        |
+| avg_norm_grads_f    | 4.39        |
+| avg_norm_k          | 2.93        |
+| avg_norm_k_dot_g    | 5.02        |
+| entropy             | 0.582       |
+| explained_variance  | 0.69        |
+| fph                 | 10.81M      |
+| fps                 | 3002        |
+| loss                | 0.144       |
+| loss_bc             | -0.000457   |
+| loss_f              | -0.143      |
+| loss_policy         | -0.143      |
+| loss_q              | 0.586       |
+| mean_episode_length | 305         |
+| mean_episode_reward | 15.2        |
+| norm_grads          | 1.52        |
+| norm_grads_policy   | 0.617       |
+| norm_grads_q        | 1.31        |
+| time                | 07-30 20:47 |
+| total_timesteps     | 24192000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.398       |
+| avg_norm_g          | 3.46        |
+| avg_norm_grads_f    | 3.27        |
+| avg_norm_k          | 2.9         |
+| avg_norm_k_dot_g    | 3.22        |
+| entropy             | 0.609       |
+| explained_variance  | 0.685       |
+| fph                 | 7.09M       |
+| fps                 | 1970        |
+| loss                | 0.534       |
+| loss_bc             | -3.75e-05   |
+| loss_f              | -0.102      |
+| loss_policy         | -0.102      |
+| loss_q              | 1.28        |
+| mean_episode_length | 291         |
+| mean_episode_reward | 14.2        |
+| norm_grads          | 1.88        |
+| norm_grads_policy   | 0.488       |
+| norm_grads_q        | 1.85        |
+| time                | 07-30 21:59 |
+| total_timesteps     | 24288000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.267       |
+| avg_norm_g          | 2.45        |
+| avg_norm_grads_f    | 2.29        |
+| avg_norm_k          | 2.37        |
+| avg_norm_k_dot_g    | 2.28        |
+| entropy             | 0.601       |
+| explained_variance  | 0.674       |
+| fph                 | 5.24M       |
+| fps                 | 1455        |
+| loss                | 0.165       |
+| loss_bc             | -0.000316   |
+| loss_f              | -0.185      |
+| loss_policy         | -0.185      |
+| loss_q              | 0.712       |
+| mean_episode_length | 352         |
+| mean_episode_reward | 13.5        |
+| norm_grads          | 2.17        |
+| norm_grads_policy   | 0.843       |
+| norm_grads_q        | 1.91        |
+| time                | 07-30 23:12 |
+| total_timesteps     | 24384000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.165       |
+| avg_norm_g          | 2.44        |
+| avg_norm_grads_f    | 2.32        |
+| avg_norm_k          | 4.18        |
+| avg_norm_k_dot_g    | 2.68        |
+| entropy             | 0.548       |
+| explained_variance  | 0.604       |
+| fph                 | 4.14M       |
+| fps                 | 1149        |
+| loss                | 0.445       |
+| loss_bc             | -0.00177    |
+| loss_f              | -0.194      |
+| loss_policy         | -0.196      |
+| loss_q              | 1.29        |
+| mean_episode_length | 265         |
+| mean_episode_reward | 16.5        |
+| norm_grads          | 2.32        |
+| norm_grads_policy   | 0.445       |
+| norm_grads_q        | 2.21        |
+| time                | 07-31 00:28 |
+| total_timesteps     | 24480000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.36        |
+| avg_norm_g          | 4.4         |
+| avg_norm_grads_f    | 4.12        |
+| avg_norm_k          | 2.69        |
+| avg_norm_k_dot_g    | 5.76        |
+| entropy             | 0.589       |
+| explained_variance  | 0.471       |
+| fph                 | 3.44M       |
+| fps                 | 955         |
+| loss                | 1.99        |
+| loss_bc             | -0.000324   |
+| loss_f              | 0.071       |
+| loss_policy         | 0.0707      |
+| loss_q              | 3.84        |
+| mean_episode_length | 336         |
+| mean_episode_reward | 14.5        |
+| norm_grads          | 3.15        |
+| norm_grads_policy   | 0.934       |
+| norm_grads_q        | 2.86        |
+| time                | 07-31 01:42 |
+| total_timesteps     | 24576000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.153       |
+| avg_norm_g          | 2.06        |
+| avg_norm_grads_f    | 1.96        |
+| avg_norm_k          | 2.72        |
+| avg_norm_k_dot_g    | 2.14        |
+| entropy             | 0.698       |
+| explained_variance  | 0.731       |
+| fph                 | 2.91M       |
+| fps                 | 807         |
+| loss                | 0.0419      |
+| loss_bc             | -0.000839   |
+| loss_f              | -0.117      |
+| loss_policy         | -0.118      |
+| loss_q              | 0.333       |
+| mean_episode_length | 269         |
+| mean_episode_reward | 16          |
+| norm_grads          | 1.49        |
+| norm_grads_policy   | 0.448       |
+| norm_grads_q        | 1.46        |
+| time                | 07-31 03:02 |
+| total_timesteps     | 24672000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.177       |
+| avg_norm_g          | 2.12        |
+| avg_norm_grads_f    | 2.01        |
+| avg_norm_k          | 5.62        |
+| avg_norm_k_dot_g    | 2.19        |
+| entropy             | 0.635       |
+| explained_variance  | 0.846       |
+| fph                 | 2.55M       |
+| fps                 | 707         |
+| loss                | 0.203       |
+| loss_bc             | -0.000188   |
+| loss_f              | -0.114      |
+| loss_policy         | -0.115      |
+| loss_q              | 0.648       |
+| mean_episode_length | 325         |
+| mean_episode_reward | 15.2        |
+| norm_grads          | 3.59        |
+| norm_grads_policy   | 1.99        |
+| norm_grads_q        | 2.25        |
+| time                | 07-31 04:17 |
+| total_timesteps     | 24768000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.27        |
+| avg_norm_g          | 2.55        |
+| avg_norm_grads_f    | 2.4         |
+| avg_norm_k          | 2.5         |
+| avg_norm_k_dot_g    | 2.52        |
+| entropy             | 0.605       |
+| explained_variance  | 0.598       |
+| fph                 | 2.26M       |
+| fps                 | 627         |
+| loss                | 0.661       |
+| loss_bc             | -7.63e-05   |
+| loss_f              | -0.134      |
+| loss_policy         | -0.134      |
+| loss_q              | 1.6         |
+| mean_episode_length | 238         |
+| mean_episode_reward | 16.5        |
+| norm_grads          | 2.56        |
+| norm_grads_policy   | 0.603       |
+| norm_grads_q        | 2.51        |
+| time                | 07-31 05:34 |
+| total_timesteps     | 24864000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.418       |
+| avg_norm_g          | 4.1         |
+| avg_norm_grads_f    | 3.84        |
+| avg_norm_k          | 2.45        |
+| avg_norm_k_dot_g    | 4.13        |
+| entropy             | 0.561       |
+| explained_variance  | 0.497       |
+| fph                 | 2.05M       |
+| fps                 | 568         |
+| loss                | 0.852       |
+| loss_bc             | -9.19e-05   |
+| loss_f              | 0.105       |
+| loss_policy         | 0.105       |
+| loss_q              | 1.5         |
+| mean_episode_length | 347         |
+| mean_episode_reward | 14.2        |
+| norm_grads          | 2.01        |
+| norm_grads_policy   | 0.517       |
+| norm_grads_q        | 1.86        |
+| time                | 07-31 06:45 |
+| total_timesteps     | 24960000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.196       |
+| avg_norm_g          | 1.96        |
+| avg_norm_grads_f    | 1.81        |
+| avg_norm_k          | 2.6         |
+| avg_norm_k_dot_g    | 2.12        |
+| entropy             | 0.58        |
+| explained_variance  | 0.785       |
+| fph                 | 1.87M       |
+| fps                 | 519         |
+| loss                | 0.201       |
+| loss_bc             | -0.000226   |
+| loss_f              | -0.12       |
+| loss_policy         | -0.12       |
+| loss_q              | 0.653       |
+| mean_episode_length | 352         |
+| mean_episode_reward | 12.8        |
+| norm_grads          | 1.88        |
+| norm_grads_policy   | 0.3         |
+| norm_grads_q        | 1.8         |
+| time                | 07-31 07:57 |
+| total_timesteps     | 25056000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.189       |
+| avg_norm_g          | 3.92        |
+| avg_norm_grads_f    | 3.78        |
+| avg_norm_k          | 3.2         |
+| avg_norm_k_dot_g    | 11.8        |
+| entropy             | 0.584       |
+| explained_variance  | 0.554       |
+| fph                 | 1.72M       |
+| fps                 | 478         |
+| loss                | 0.574       |
+| loss_bc             | -0.000468   |
+| loss_f              | 0.0128      |
+| loss_policy         | 0.0123      |
+| loss_q              | 1.14        |
+| mean_episode_length | 327         |
+| mean_episode_reward | 14          |
+| norm_grads          | 1.73        |
+| norm_grads_policy   | 0.628       |
+| norm_grads_q        | 1.64        |
+| time                | 07-31 09:10 |
+| total_timesteps     | 25152000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.156       |
+| avg_norm_g          | 3.66        |
+| avg_norm_grads_f    | 3.52        |
+| avg_norm_k          | 2.68        |
+| avg_norm_k_dot_g    | 3.96        |
+| entropy             | 0.549       |
+| explained_variance  | 0.553       |
+| fph                 | 1.59M       |
+| fps                 | 442         |
+| loss                | 1.95        |
+| loss_bc             | -0.000224   |
+| loss_f              | 0.27        |
+| loss_policy         | 0.27        |
+| loss_q              | 3.37        |
+| mean_episode_length | 316         |
+| mean_episode_reward | 14.5        |
+| norm_grads          | 4.25        |
+| norm_grads_policy   | 1.5         |
+| norm_grads_q        | 3.86        |
+| time                | 07-31 10:24 |
+| total_timesteps     | 25248000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 1.9         |
+| avg_norm_g          | 19.7        |
+| avg_norm_grads_f    | 18.2        |
+| avg_norm_k          | 2.65        |
+| avg_norm_k_dot_g    | 28.3        |
+| entropy             | 0.577       |
+| explained_variance  | 0.617       |
+| fph                 | 1.48M       |
+| fps                 | 410         |
+| loss                | 0.643       |
+| loss_bc             | -0.000206   |
+| loss_f              | -0.152      |
+| loss_policy         | -0.153      |
+| loss_q              | 1.6         |
+| mean_episode_length | 337         |
+| mean_episode_reward | 13.5        |
+| norm_grads          | 2.75        |
+| norm_grads_policy   | 0.622       |
+| norm_grads_q        | 2.62        |
+| time                | 07-31 11:42 |
+| total_timesteps     | 25344000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.473       |
+| avg_norm_g          | 9.2         |
+| avg_norm_grads_f    | 8.99        |
+| avg_norm_k          | 2.15        |
+| avg_norm_k_dot_g    | 6.2         |
+| entropy             | 0.678       |
+| explained_variance  | 0.496       |
+| fph                 | 1.38M       |
+| fps                 | 384         |
+| loss                | 1.32        |
+| loss_bc             | -0.000186   |
+| loss_f              | 0.139       |
+| loss_policy         | 0.139       |
+| loss_q              | 2.37        |
+| mean_episode_length | 372         |
+| mean_episode_reward | 13          |
+| norm_grads          | 2.85        |
+| norm_grads_policy   | 1.21        |
+| norm_grads_q        | 2.9         |
+| time                | 07-31 12:57 |
+| total_timesteps     | 25440000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.359       |
+| avg_norm_g          | 5.25        |
+| avg_norm_grads_f    | 5           |
+| avg_norm_k          | 2.53        |
+| avg_norm_k_dot_g    | 5.7         |
+| entropy             | 0.517       |
+| explained_variance  | 0.453       |
+| fph                 | 1.30M       |
+| fps                 | 362         |
+| loss                | 1.4         |
+| loss_bc             | -2.64e-05   |
+| loss_f              | 0.0742      |
+| loss_policy         | 0.0742      |
+| loss_q              | 2.66        |
+| mean_episode_length | 332         |
+| mean_episode_reward | 15.5        |
+| norm_grads          | 3.46        |
+| norm_grads_policy   | 1.13        |
+| norm_grads_q        | 2.98        |
+| time                | 07-31 14:08 |
+| total_timesteps     | 25536000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.162       |
+| avg_norm_g          | 1.85        |
+| avg_norm_grads_f    | 1.74        |
+| avg_norm_k          | 2.41        |
+| avg_norm_k_dot_g    | 2.04        |
+| entropy             | 0.711       |
+| explained_variance  | 0.619       |
+| fph                 | 1.24M       |
+| fps                 | 343         |
+| loss                | 0.381       |
+| loss_bc             | -0.000174   |
+| loss_f              | -0.114      |
+| loss_policy         | -0.114      |
+| loss_q              | 1           |
+| mean_episode_length | 302         |
+| mean_episode_reward | 14.5        |
+| norm_grads          | 1.4         |
+| norm_grads_policy   | 0.513       |
+| norm_grads_q        | 1.2         |
+| time                | 07-31 15:18 |
+| total_timesteps     | 25632000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.13        |
+| avg_norm_g          | 3.94        |
+| avg_norm_grads_f    | 3.85        |
+| avg_norm_k          | 2.96        |
+| avg_norm_k_dot_g    | 4.69        |
+| entropy             | 0.443       |
+| explained_variance  | 0.602       |
+| fph                 | 1.17M       |
+| fps                 | 325         |
+| loss                | 1.15        |
+| loss_bc             | -0.000306   |
+| loss_f              | 0.0412      |
+| loss_policy         | 0.0409      |
+| loss_q              | 2.23        |
+| mean_episode_length | 255         |
+| mean_episode_reward | 16.5        |
+| norm_grads          | 1.8         |
+| norm_grads_policy   | 0.382       |
+| norm_grads_q        | 1.73        |
+| time                | 07-31 16:32 |
+| total_timesteps     | 25728000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.357       |
+| avg_norm_g          | 3.77        |
+| avg_norm_grads_f    | 3.56        |
+| avg_norm_k          | 2.56        |
+| avg_norm_k_dot_g    | 3.72        |
+| entropy             | 0.522       |
+| explained_variance  | 0.596       |
+| fph                 | 1.11M       |
+| fps                 | 309         |
+| loss                | 0.967       |
+| loss_bc             | -0.000641   |
+| loss_f              | -0.0223     |
+| loss_policy         | -0.0229     |
+| loss_q              | 1.99        |
+| mean_episode_length | 328         |
+| mean_episode_reward | 14.5        |
+| norm_grads          | 2.47        |
+| norm_grads_policy   | 0.669       |
+| norm_grads_q        | 2.32        |
+| time                | 07-31 17:45 |
+| total_timesteps     | 25824000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.126       |
+| avg_norm_g          | 1.96        |
+| avg_norm_grads_f    | 1.87        |
+| avg_norm_k          | 4.49        |
+| avg_norm_k_dot_g    | 2.06        |
+| entropy             | 0.588       |
+| explained_variance  | 0.365       |
+| fph                 | 1.06M       |
+| fps                 | 293         |
+| loss                | 0.387       |
+| loss_bc             | -0.000212   |
+| loss_f              | -0.153      |
+| loss_policy         | -0.153      |
+| loss_q              | 1.09        |
+| mean_episode_length | 318         |
+| mean_episode_reward | 16          |
+| norm_grads          | 3.5         |
+| norm_grads_policy   | 0.667       |
+| norm_grads_q        | 3.47        |
+| time                | 07-31 19:05 |
+| total_timesteps     | 25920000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.296       |
+| avg_norm_g          | 3.28        |
+| avg_norm_grads_f    | 3.11        |
+| avg_norm_k          | 2.68        |
+| avg_norm_k_dot_g    | 3.18        |
+| entropy             | 0.454       |
+| explained_variance  | 0.622       |
+| fph                 | 1.01M       |
+| fps                 | 280         |
+| loss                | 0.643       |
+| loss_bc             | -0.00026    |
+| loss_f              | 0.000877    |
+| loss_policy         | 0.000617    |
+| loss_q              | 1.29        |
+| mean_episode_length | 295         |
+| mean_episode_reward | 14.8        |
+| norm_grads          | 2.12        |
+| norm_grads_policy   | 0.779       |
+| norm_grads_q        | 2.04        |
+| time                | 07-31 20:20 |
+| total_timesteps     | 26016000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.182       |
+| avg_norm_g          | 2.48        |
+| avg_norm_grads_f    | 2.34        |
+| avg_norm_k          | 4.92        |
+| avg_norm_k_dot_g    | 3.21        |
+| entropy             | 0.654       |
+| explained_variance  | 0.626       |
+| fph                 | 0.96M       |
+| fps                 | 267         |
+| loss                | 0.411       |
+| loss_bc             | 2.48e-05    |
+| loss_f              | -0.0589     |
+| loss_policy         | -0.0588     |
+| loss_q              | 0.952       |
+| mean_episode_length | 269         |
+| mean_episode_reward | 16          |
+| norm_grads          | 1.56        |
+| norm_grads_policy   | 0.629       |
+| norm_grads_q        | 1.3         |
+| time                | 07-31 21:38 |
+| total_timesteps     | 26112000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.297       |
+| avg_norm_g          | 3.72        |
+| avg_norm_grads_f    | 3.49        |
+| avg_norm_k          | 2.9         |
+| avg_norm_k_dot_g    | 4.71        |
+| entropy             | 0.702       |
+| explained_variance  | 0.566       |
+| fph                 | 0.92M       |
+| fps                 | 256         |
+| loss                | 0.429       |
+| loss_bc             | -0.000459   |
+| loss_f              | -0.125      |
+| loss_policy         | -0.126      |
+| loss_q              | 1.12        |
+| mean_episode_length | 321         |
+| mean_episode_reward | 15.2        |
+| norm_grads          | 2.34        |
+| norm_grads_policy   | 0.618       |
+| norm_grads_q        | 2.23        |
+| time                | 07-31 22:54 |
+| total_timesteps     | 26208000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.591       |
+| avg_norm_g          | 3.84        |
+| avg_norm_grads_f    | 3.41        |
+| avg_norm_k          | 2.93        |
+| avg_norm_k_dot_g    | 4.69        |
+| entropy             | 0.613       |
+| explained_variance  | 0.718       |
+| fph                 | 0.89M       |
+| fps                 | 246         |
+| loss                | 0.104       |
+| loss_bc             | -0.000261   |
+| loss_f              | -0.181      |
+| loss_policy         | -0.182      |
+| loss_q              | 0.583       |
+| mean_episode_length | 326         |
+| mean_episode_reward | 13.2        |
+| norm_grads          | 1.5         |
+| norm_grads_policy   | 0.537       |
+| norm_grads_q        | 1.37        |
+| time                | 08-01 00:13 |
+| total_timesteps     | 26304000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.372       |
+| avg_norm_g          | 2.73        |
+| avg_norm_grads_f    | 2.5         |
+| avg_norm_k          | 2.61        |
+| avg_norm_k_dot_g    | 2.59        |
+| entropy             | 0.566       |
+| explained_variance  | 0.442       |
+| fph                 | 0.85M       |
+| fps                 | 237         |
+| loss                | 1.06        |
+| loss_bc             | -0.000159   |
+| loss_f              | -0.125      |
+| loss_policy         | -0.125      |
+| loss_q              | 2.39        |
+| mean_episode_length | 278         |
+| mean_episode_reward | 16          |
+| norm_grads          | 3.25        |
+| norm_grads_policy   | 0.432       |
+| norm_grads_q        | 3.25        |
+| time                | 08-01 01:29 |
+| total_timesteps     | 26400000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.363       |
+| avg_norm_g          | 9.57        |
+| avg_norm_grads_f    | 9.35        |
+| avg_norm_k          | 4.75        |
+| avg_norm_k_dot_g    | 11.8        |
+| entropy             | 0.607       |
+| explained_variance  | 0.707       |
+| fph                 | 0.82M       |
+| fps                 | 228         |
+| loss                | 1.12        |
+| loss_bc             | -0.000372   |
+| loss_f              | 0.142       |
+| loss_policy         | 0.142       |
+| loss_q              | 1.97        |
+| mean_episode_length | 350         |
+| mean_episode_reward | 13.2        |
+| norm_grads          | 3.05        |
+| norm_grads_policy   | 1.07        |
+| norm_grads_q        | 3.06        |
+| time                | 08-01 02:42 |
+| total_timesteps     | 26496000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.262       |
+| avg_norm_g          | 6.59        |
+| avg_norm_grads_f    | 6.37        |
+| avg_norm_k          | 3.38        |
+| avg_norm_k_dot_g    | 7.75        |
+| entropy             | 0.508       |
+| explained_variance  | 0.647       |
+| fph                 | 0.80M       |
+| fps                 | 221         |
+| loss                | 0.936       |
+| loss_bc             | -0.000135   |
+| loss_f              | 0.133       |
+| loss_policy         | 0.133       |
+| loss_q              | 1.62        |
+| mean_episode_length | 309         |
+| mean_episode_reward | 14.8        |
+| norm_grads          | 2.66        |
+| norm_grads_policy   | 0.476       |
+| norm_grads_q        | 2.58        |
+| time                | 08-01 03:53 |
+| total_timesteps     | 26592000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.348       |
+| avg_norm_g          | 2.86        |
+| avg_norm_grads_f    | 2.67        |
+| avg_norm_k          | 3.43        |
+| avg_norm_k_dot_g    | 3           |
+| entropy             | 0.567       |
+| explained_variance  | 0.532       |
+| fph                 | 0.77M       |
+| fps                 | 214         |
+| loss                | 0.488       |
+| loss_bc             | -0.000469   |
+| loss_f              | -0.223      |
+| loss_policy         | -0.223      |
+| loss_q              | 1.43        |
+| mean_episode_length | 343         |
+| mean_episode_reward | 14          |
+| norm_grads          | 2.18        |
+| norm_grads_policy   | 0.68        |
+| norm_grads_q        | 2.03        |
+| time                | 08-01 05:11 |
+| total_timesteps     | 26688000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.121       |
+| avg_norm_g          | 5.46        |
+| avg_norm_grads_f    | 5.35        |
+| avg_norm_k          | 3.19        |
+| avg_norm_k_dot_g    | 7.52        |
+| entropy             | 0.568       |
+| explained_variance  | 0.374       |
+| fph                 | 0.75M       |
+| fps                 | 207         |
+| loss                | 0.552       |
+| loss_bc             | -0.000757   |
+| loss_f              | -0.056      |
+| loss_policy         | -0.0568     |
+| loss_q              | 1.23        |
+| mean_episode_length | 297         |
+| mean_episode_reward | 15.5        |
+| norm_grads          | 1.81        |
+| norm_grads_policy   | 0.583       |
+| norm_grads_q        | 1.58        |
+| time                | 08-01 06:27 |
+| total_timesteps     | 26784000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.44        |
+| avg_norm_g          | 4.85        |
+| avg_norm_grads_f    | 4.36        |
+| avg_norm_k          | 2.34        |
+| avg_norm_k_dot_g    | 6.49        |
+| entropy             | 0.711       |
+| explained_variance  | 0.539       |
+| fph                 | 0.72M       |
+| fps                 | 200         |
+| loss                | 0.472       |
+| loss_bc             | -0.000527   |
+| loss_f              | -0.0306     |
+| loss_policy         | -0.0312     |
+| loss_q              | 1.02        |
+| mean_episode_length | 307         |
+| mean_episode_reward | 15          |
+| norm_grads          | 1.77        |
+| norm_grads_policy   | 1.01        |
+| norm_grads_q        | 1.69        |
+| time                | 08-01 07:43 |
+| total_timesteps     | 26880000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.803       |
+| avg_norm_g          | 5.27        |
+| avg_norm_grads_f    | 4.86        |
+| avg_norm_k          | 2.4         |
+| avg_norm_k_dot_g    | 4.85        |
+| entropy             | 0.596       |
+| explained_variance  | 0.691       |
+| fph                 | 0.70M       |
+| fps                 | 195         |
+| loss                | 0.466       |
+| loss_bc             | -0.000199   |
+| loss_f              | -0.079      |
+| loss_policy         | -0.0792     |
+| loss_q              | 1.1         |
+| mean_episode_length | 288         |
+| mean_episode_reward | 14.5        |
+| norm_grads          | 1.5         |
+| norm_grads_policy   | 0.647       |
+| norm_grads_q        | 1.3         |
+| time                | 08-01 08:57 |
+| total_timesteps     | 26976000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.38        |
+| avg_norm_g          | 3.55        |
+| avg_norm_grads_f    | 3.22        |
+| avg_norm_k          | 3.55        |
+| avg_norm_k_dot_g    | 5.25        |
+| entropy             | 0.535       |
+| explained_variance  | 0.706       |
+| fph                 | 0.68M       |
+| fps                 | 189         |
+| loss                | 0.524       |
+| loss_bc             | -0.00024    |
+| loss_f              | -0.0976     |
+| loss_policy         | -0.0978     |
+| loss_q              | 1.26        |
+| mean_episode_length | 311         |
+| mean_episode_reward | 16          |
+| norm_grads          | 3.52        |
+| norm_grads_policy   | 0.765       |
+| norm_grads_q        | 3.45        |
+| time                | 08-01 10:12 |
+| total_timesteps     | 27072000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.384       |
+| avg_norm_g          | 4.2         |
+| avg_norm_grads_f    | 3.96        |
+| avg_norm_k          | 2.49        |
+| avg_norm_k_dot_g    | 4.42        |
+| entropy             | 0.543       |
+| explained_variance  | 0.485       |
+| fph                 | 0.66M       |
+| fps                 | 184         |
+| loss                | 1.26        |
+| loss_bc             | -0.000589   |
+| loss_f              | 0.0336      |
+| loss_policy         | 0.033       |
+| loss_q              | 2.46        |
+| mean_episode_length | 256         |
+| mean_episode_reward | 16          |
+| norm_grads          | 1.83        |
+| norm_grads_policy   | 0.505       |
+| norm_grads_q        | 1.81        |
+| time                | 08-01 11:24 |
+| total_timesteps     | 27168000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.101       |
+| avg_norm_g          | 2.35        |
+| avg_norm_grads_f    | 2.29        |
+| avg_norm_k          | 3.52        |
+| avg_norm_k_dot_g    | 2.48        |
+| entropy             | 0.562       |
+| explained_variance  | 0.712       |
+| fph                 | 0.65M       |
+| fps                 | 179         |
+| loss                | 0.493       |
+| loss_bc             | -5.24e-05   |
+| loss_f              | -0.049      |
+| loss_policy         | -0.049      |
+| loss_q              | 1.09        |
+| mean_episode_length | 376         |
+| mean_episode_reward | 13.8        |
+| norm_grads          | 1.55        |
+| norm_grads_policy   | 0.408       |
+| norm_grads_q        | 1.5         |
+| time                | 08-01 12:38 |
+| total_timesteps     | 27264000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 4.58        |
+| avg_norm_g          | 26.6        |
+| avg_norm_grads_f    | 24.6        |
+| avg_norm_k          | 2.5         |
+| avg_norm_k_dot_g    | 21.8        |
+| entropy             | 0.653       |
+| explained_variance  | 0.469       |
+| fph                 | 0.63M       |
+| fps                 | 175         |
+| loss                | 0.89        |
+| loss_bc             | -0.00022    |
+| loss_f              | -0.293      |
+| loss_policy         | -0.293      |
+| loss_q              | 2.38        |
+| mean_episode_length | 279         |
+| mean_episode_reward | 15.8        |
+| norm_grads          | 9.92        |
+| norm_grads_policy   | 9.33        |
+| norm_grads_q        | 4.77        |
+| time                | 08-01 13:52 |
+| total_timesteps     | 27360000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.348       |
+| avg_norm_g          | 4.56        |
+| avg_norm_grads_f    | 4.29        |
+| avg_norm_k          | 2.97        |
+| avg_norm_k_dot_g    | 4.95        |
+| entropy             | 0.467       |
+| explained_variance  | 0.51        |
+| fph                 | 0.62M       |
+| fps                 | 171         |
+| loss                | 1.35        |
+| loss_bc             | -0.000394   |
+| loss_f              | -0.0158     |
+| loss_policy         | -0.0162     |
+| loss_q              | 2.75        |
+| mean_episode_length | 319         |
+| mean_episode_reward | 13.5        |
+| norm_grads          | 2.85        |
+| norm_grads_policy   | 0.532       |
+| norm_grads_q        | 2.78        |
+| time                | 08-01 15:08 |
+| total_timesteps     | 27456000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.161       |
+| avg_norm_g          | 1.93        |
+| avg_norm_grads_f    | 1.81        |
+| avg_norm_k          | 3.09        |
+| avg_norm_k_dot_g    | 2.25        |
+| entropy             | 0.614       |
+| explained_variance  | 0.602       |
+| fph                 | 0.60M       |
+| fps                 | 166         |
+| loss                | 0.404       |
+| loss_bc             | -0.000413   |
+| loss_f              | -0.0549     |
+| loss_policy         | -0.0553     |
+| loss_q              | 0.932       |
+| mean_episode_length | 241         |
+| mean_episode_reward | 16.8        |
+| norm_grads          | 1.74        |
+| norm_grads_policy   | 0.426       |
+| norm_grads_q        | 1.74        |
+| time                | 08-01 16:26 |
+| total_timesteps     | 27552000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.217       |
+| avg_norm_g          | 4.52        |
+| avg_norm_grads_f    | 4.38        |
+| avg_norm_k          | 2.74        |
+| avg_norm_k_dot_g    | 4.74        |
+| entropy             | 0.389       |
+| explained_variance  | 0.398       |
+| fph                 | 0.59M       |
+| fps                 | 162         |
+| loss                | 2.08        |
+| loss_bc             | -0.000345   |
+| loss_f              | 0.139       |
+| loss_policy         | 0.139       |
+| loss_q              | 3.89        |
+| mean_episode_length | 303         |
+| mean_episode_reward | 16          |
+| norm_grads          | 3.04        |
+| norm_grads_policy   | 0.861       |
+| norm_grads_q        | 2.93        |
+| time                | 08-01 17:41 |
+| total_timesteps     | 27648000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.955       |
+| avg_norm_g          | 9.25        |
+| avg_norm_grads_f    | 8.32        |
+| avg_norm_k          | 2.58        |
+| avg_norm_k_dot_g    | 11.9        |
+| entropy             | 0.498       |
+| explained_variance  | 0.584       |
+| fph                 | 0.57M       |
+| fps                 | 159         |
+| loss                | 1.39        |
+| loss_bc             | -0.000277   |
+| loss_f              | 0.0871      |
+| loss_policy         | 0.0868      |
+| loss_q              | 2.61        |
+| mean_episode_length | 317         |
+| mean_episode_reward | 15.2        |
+| norm_grads          | 3.99        |
+| norm_grads_policy   | 3.02        |
+| norm_grads_q        | 2.49        |
+| time                | 08-01 18:55 |
+| total_timesteps     | 27744000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.122       |
+| avg_norm_g          | 2.57        |
+| avg_norm_grads_f    | 2.5         |
+| avg_norm_k          | 2.46        |
+| avg_norm_k_dot_g    | 2.52        |
+| entropy             | 0.505       |
+| explained_variance  | 0.735       |
+| fph                 | 0.56M       |
+| fps                 | 155         |
+| loss                | 0.753       |
+| loss_bc             | -0.000254   |
+| loss_f              | -0.0158     |
+| loss_policy         | -0.0161     |
+| loss_q              | 1.55        |
+| mean_episode_length | 292         |
+| mean_episode_reward | 16.2        |
+| norm_grads          | 2.29        |
+| norm_grads_policy   | 0.429       |
+| norm_grads_q        | 2.22        |
+| time                | 08-01 20:10 |
+| total_timesteps     | 27840000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.112       |
+| avg_norm_g          | 1.51        |
+| avg_norm_grads_f    | 1.43        |
+| avg_norm_k          | 2.85        |
+| avg_norm_k_dot_g    | 1.59        |
+| entropy             | 0.63        |
+| explained_variance  | 0.584       |
+| fph                 | 0.55M       |
+| fps                 | 152         |
+| loss                | 0.245       |
+| loss_bc             | -0.00034    |
+| loss_f              | -0.177      |
+| loss_policy         | -0.177      |
+| loss_q              | 0.858       |
+| mean_episode_length | 340         |
+| mean_episode_reward | 12          |
+| norm_grads          | 1.88        |
+| norm_grads_policy   | 0.428       |
+| norm_grads_q        | 1.8         |
+| time                | 08-01 21:26 |
+| total_timesteps     | 27936000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.684       |
+| avg_norm_g          | 8.58        |
+| avg_norm_grads_f    | 8.19        |
+| avg_norm_k          | 2.76        |
+| avg_norm_k_dot_g    | 6.18        |
+| entropy             | 0.556       |
+| explained_variance  | 0.228       |
+| fph                 | 0.54M       |
+| fps                 | 149         |
+| loss                | 0.734       |
+| loss_bc             | -0.000285   |
+| loss_f              | -0.184      |
+| loss_policy         | -0.184      |
+| loss_q              | 1.85        |
+| mean_episode_length | 345         |
+| mean_episode_reward | 15.2        |
+| norm_grads          | 5.65        |
+| norm_grads_policy   | 5.3         |
+| norm_grads_q        | 6.02        |
+| time                | 08-01 22:39 |
+| total_timesteps     | 28032000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.299       |
+| avg_norm_g          | 4.32        |
+| avg_norm_grads_f    | 4.12        |
+| avg_norm_k          | 3.77        |
+| avg_norm_k_dot_g    | 7.51        |
+| entropy             | 0.512       |
+| explained_variance  | 0.46        |
+| fph                 | 0.53M       |
+| fps                 | 146         |
+| loss                | 1.12        |
+| loss_bc             | -0.000572   |
+| loss_f              | -0.0637     |
+| loss_policy         | -0.0643     |
+| loss_q              | 2.38        |
+| mean_episode_length | 348         |
+| mean_episode_reward | 13.5        |
+| norm_grads          | 3.27        |
+| norm_grads_policy   | 0.607       |
+| norm_grads_q        | 3.23        |
+| time                | 08-01 23:52 |
+| total_timesteps     | 28128000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.464       |
+| avg_norm_g          | 4.31        |
+| avg_norm_grads_f    | 4.02        |
+| avg_norm_k          | 2.65        |
+| avg_norm_k_dot_g    | 4.25        |
+| entropy             | 0.411       |
+| explained_variance  | 0.495       |
+| fph                 | 0.52M       |
+| fps                 | 143         |
+| loss                | 0.409       |
+| loss_bc             | -0.000248   |
+| loss_f              | -0.0662     |
+| loss_policy         | -0.0665     |
+| loss_q              | 0.959       |
+| mean_episode_length | 315         |
+| mean_episode_reward | 16.2        |
+| norm_grads          | 2.27        |
+| norm_grads_policy   | 0.901       |
+| norm_grads_q        | 1.93        |
+| time                | 08-02 01:13 |
+| total_timesteps     | 28224000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.233       |
+| avg_norm_g          | 3.39        |
+| avg_norm_grads_f    | 3.24        |
+| avg_norm_k          | 4.02        |
+| avg_norm_k_dot_g    | 3.34        |
+| entropy             | 0.409       |
+| explained_variance  | 0.513       |
+| fph                 | 0.51M       |
+| fps                 | 140         |
+| loss                | 0.487       |
+| loss_bc             | -0.000726   |
+| loss_f              | -0.0713     |
+| loss_policy         | -0.0721     |
+| loss_q              | 1.13        |
+| mean_episode_length | 286         |
+| mean_episode_reward | 15.8        |
+| norm_grads          | 2.56        |
+| norm_grads_policy   | 0.704       |
+| norm_grads_q        | 2.48        |
+| time                | 08-02 02:28 |
+| total_timesteps     | 28320000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.451       |
+| avg_norm_g          | 3.35        |
+| avg_norm_grads_f    | 2.94        |
+| avg_norm_k          | 2.75        |
+| avg_norm_k_dot_g    | 4.51        |
+| entropy             | 0.487       |
+| explained_variance  | 0.66        |
+| fph                 | 0.50M       |
+| fps                 | 138         |
+| loss                | 0.364       |
+| loss_bc             | -0.000232   |
+| loss_f              | -0.092      |
+| loss_policy         | -0.0923     |
+| loss_q              | 0.923       |
+| mean_episode_length | 256         |
+| mean_episode_reward | 16.8        |
+| norm_grads          | 1.79        |
+| norm_grads_policy   | 0.864       |
+| norm_grads_q        | 1.59        |
+| time                | 08-02 03:44 |
+| total_timesteps     | 28416000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.157       |
+| avg_norm_g          | 2.83        |
+| avg_norm_grads_f    | 2.72        |
+| avg_norm_k          | 3.48        |
+| avg_norm_k_dot_g    | 3.09        |
+| entropy             | 0.434       |
+| explained_variance  | 0.422       |
+| fph                 | 0.49M       |
+| fps                 | 135         |
+| loss                | 0.348       |
+| loss_bc             | -0.000406   |
+| loss_f              | -0.0858     |
+| loss_policy         | -0.0862     |
+| loss_q              | 0.876       |
+| mean_episode_length | 232         |
+| mean_episode_reward | 16.5        |
+| norm_grads          | 2.36        |
+| norm_grads_policy   | 0.754       |
+| norm_grads_q        | 2.25        |
+| time                | 08-02 05:00 |
+| total_timesteps     | 28512000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.217       |
+| avg_norm_g          | 2.12        |
+| avg_norm_grads_f    | 1.92        |
+| avg_norm_k          | 3.94        |
+| avg_norm_k_dot_g    | 2.64        |
+| entropy             | 0.553       |
+| explained_variance  | 0.185       |
+| fph                 | 0.48M       |
+| fps                 | 133         |
+| loss                | 0.456       |
+| loss_bc             | -0.000369   |
+| loss_f              | -0.11       |
+| loss_policy         | -0.11       |
+| loss_q              | 1.14        |
+| mean_episode_length | 319         |
+| mean_episode_reward | 15.5        |
+| norm_grads          | 3.57        |
+| norm_grads_policy   | 0.646       |
+| norm_grads_q        | 3.5         |
+| time                | 08-02 06:10 |
+| total_timesteps     | 28608000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.239       |
+| avg_norm_g          | 3.33        |
+| avg_norm_grads_f    | 3.18        |
+| avg_norm_k          | 2.65        |
+| avg_norm_k_dot_g    | 3.4         |
+| entropy             | 0.361       |
+| explained_variance  | 0.481       |
+| fph                 | 0.47M       |
+| fps                 | 131         |
+| loss                | 0.911       |
+| loss_bc             | -0.000216   |
+| loss_f              | 0.00563     |
+| loss_policy         | 0.00541     |
+| loss_q              | 1.82        |
+| mean_episode_length | 321         |
+| mean_episode_reward | 16.2        |
+| norm_grads          | 3.12        |
+| norm_grads_policy   | 0.59        |
+| norm_grads_q        | 3.02        |
+| time                | 08-02 07:22 |
+| total_timesteps     | 28704000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.617       |
+| avg_norm_g          | 4.72        |
+| avg_norm_grads_f    | 4.28        |
+| avg_norm_k          | 3.13        |
+| avg_norm_k_dot_g    | 5.57        |
+| entropy             | 0.354       |
+| explained_variance  | 0.495       |
+| fph                 | 0.46M       |
+| fps                 | 128         |
+| loss                | 1.01        |
+| loss_bc             | -0.000507   |
+| loss_f              | -0.0658     |
+| loss_policy         | -0.0663     |
+| loss_q              | 2.15        |
+| mean_episode_length | 288         |
+| mean_episode_reward | 16          |
+| norm_grads          | 5.3         |
+| norm_grads_policy   | 4.67        |
+| norm_grads_q        | 3.92        |
+| time                | 08-02 08:39 |
+| total_timesteps     | 28800000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.0715      |
+| avg_norm_g          | 3.31        |
+| avg_norm_grads_f    | 3.24        |
+| avg_norm_k          | 9.52        |
+| avg_norm_k_dot_g    | 4.73        |
+| entropy             | 0.328       |
+| explained_variance  | 0.606       |
+| fph                 | 0.46M       |
+| fps                 | 126         |
+| loss                | 1.01        |
+| loss_bc             | -0.000432   |
+| loss_f              | 0.0753      |
+| loss_policy         | 0.0749      |
+| loss_q              | 1.87        |
+| mean_episode_length | 279         |
+| mean_episode_reward | 15.8        |
+| norm_grads          | 2.6         |
+| norm_grads_policy   | 1.09        |
+| norm_grads_q        | 2.4         |
+| time                | 08-02 09:53 |
+| total_timesteps     | 28896000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.285       |
+| avg_norm_g          | 5.01        |
+| avg_norm_grads_f    | 4.84        |
+| avg_norm_k          | 3.15        |
+| avg_norm_k_dot_g    | 5.15        |
+| entropy             | 0.331       |
+| explained_variance  | 0.502       |
+| fph                 | 0.45M       |
+| fps                 | 124         |
+| loss                | 0.804       |
+| loss_bc             | -0.000267   |
+| loss_f              | -0.0082     |
+| loss_policy         | -0.00847    |
+| loss_q              | 1.63        |
+| mean_episode_length | 264         |
+| mean_episode_reward | 15.8        |
+| norm_grads          | 2.96        |
+| norm_grads_policy   | 0.692       |
+| norm_grads_q        | 2.87        |
+| time                | 08-02 11:04 |
+| total_timesteps     | 28992000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.504       |
+| avg_norm_g          | 4.23        |
+| avg_norm_grads_f    | 4.01        |
+| avg_norm_k          | 3.38        |
+| avg_norm_k_dot_g    | 3.59        |
+| entropy             | 0.327       |
+| explained_variance  | 0.624       |
+| fph                 | 0.44M       |
+| fps                 | 122         |
+| loss                | 1.01        |
+| loss_bc             | -0.000825   |
+| loss_f              | -0.0368     |
+| loss_policy         | -0.0376     |
+| loss_q              | 2.11        |
+| mean_episode_length | 297         |
+| mean_episode_reward | 16.2        |
+| norm_grads          | 2.88        |
+| norm_grads_policy   | 0.959       |
+| norm_grads_q        | 2.79        |
+| time                | 08-02 12:20 |
+| total_timesteps     | 29088000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.422       |
+| avg_norm_g          | 4.59        |
+| avg_norm_grads_f    | 4.31        |
+| avg_norm_k          | 2.66        |
+| avg_norm_k_dot_g    | 5.36        |
+| entropy             | 0.404       |
+| explained_variance  | 0.574       |
+| fph                 | 0.44M       |
+| fps                 | 120         |
+| loss                | 1.63        |
+| loss_bc             | -0.000234   |
+| loss_f              | 0.0205      |
+| loss_policy         | 0.0203      |
+| loss_q              | 3.23        |
+| mean_episode_length | 274         |
+| mean_episode_reward | 16.5        |
+| norm_grads          | 3.05        |
+| norm_grads_policy   | 1.16        |
+| norm_grads_q        | 2.7         |
+| time                | 08-02 13:33 |
+| total_timesteps     | 29184000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.174       |
+| avg_norm_g          | 3.96        |
+| avg_norm_grads_f    | 3.86        |
+| avg_norm_k          | 3.45        |
+| avg_norm_k_dot_g    | 4.76        |
+| entropy             | 0.323       |
+| explained_variance  | 0.566       |
+| fph                 | 0.43M       |
+| fps                 | 119         |
+| loss                | 1.82        |
+| loss_bc             | -0.000299   |
+| loss_f              | 0.272       |
+| loss_policy         | 0.272       |
+| loss_q              | 3.11        |
+| mean_episode_length | 323         |
+| mean_episode_reward | 12.8        |
+| norm_grads          | 2.67        |
+| norm_grads_policy   | 0.787       |
+| norm_grads_q        | 2.63        |
+| time                | 08-02 14:46 |
+| total_timesteps     | 29280000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.187       |
+| avg_norm_g          | 1.99        |
+| avg_norm_grads_f    | 1.87        |
+| avg_norm_k          | 2.42        |
+| avg_norm_k_dot_g    | 2.03        |
+| entropy             | 0.49        |
+| explained_variance  | 0.7         |
+| fph                 | 0.42M       |
+| fps                 | 117         |
+| loss                | 0.457       |
+| loss_bc             | -0.00011    |
+| loss_f              | -0.0167     |
+| loss_policy         | -0.0168     |
+| loss_q              | 0.957       |
+| mean_episode_length | 253         |
+| mean_episode_reward | 17.8        |
+| norm_grads          | 2.88        |
+| norm_grads_policy   | 0.785       |
+| norm_grads_q        | 2.74        |
+| time                | 08-02 15:57 |
+| total_timesteps     | 29376000    |
+-------------------------------------
+-------------------------------------
+| avg_norm_adj        | 0.589       |
+| avg_norm_g          | 5.83        |
+| avg_norm_grads_f    | 5.45        |
+| avg_norm_k          | 2.74        |
+| avg_norm_k_dot_g    | 6.24        |
+| entropy             | 0.394       |
+| explained_variance  | 0.534       |
+| fph                 | 0.42M       |
+| fps                 | 115         |
+| loss                | 0.808       |
+| loss_bc             | -0.000579   |
+| loss_f              | -0.173      |
+| loss_policy         | -0.173      |
+| loss_q              | 1.97        |
+| mean_episode_length | 300         |
+| mean_episode_reward | 15.8        |
+| norm_grads          | 2.64        |
+| norm_grads_policy   | 1.38        |
+| norm_grads_q        | 2.04        |
+| time                | 08-02 17:16 |
+| total_timesteps     | 29472000    |
+-------------------------------------
