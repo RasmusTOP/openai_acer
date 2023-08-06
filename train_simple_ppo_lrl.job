@@ -1,0 +1,28 @@
+#!/bin/bash
+
+#SBATCH --job-name=ppo_def_rogue_traning        # Job name
+#SBATCH --output=logs/%j.out     # Name of output file (%j expands to jobId)
+#SBATCH --cpus-per-task=4        # Schedule one core
+#SBATCH --time=3-00:00:00          # Run time (hh:mm:ss) - run for one hour max
+#SBATCH --gres=gpu:2               # Schedule a GPU, or more with gpu:2 etc
+#SBATCH --partition=brown        # Run on either the Red or Brown queue
+#SBATCH --mem=32G
+
+# load modules
+module load Python/3.7.4-GCCcore-8.3.0
+module load CUDA/10.2.89-GCC-8.3.0
+module load singularity
+
+#activate venv
+source /home/rped/.bashrc
+cd ..
+#singularity run --nv -B /home/common/datasets/imagenet2012/:/imagenet rugdockaa.sif
+#source venv/bin/activate
+#cd openai_acer
+singularity exec --nv -B /home/common/datasets/imagenet2012/:/imagenet rugdockaa.sif /bin/bash -c "cd openai_acer; make; . train_ppo.sh -f cfg_rogue_default_ppo_lr_l.cfg"
+
+
+#make
+
+#. train_acer.sh -f cfg_rogue_default.cfg
+
