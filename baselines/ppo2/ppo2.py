@@ -190,6 +190,20 @@ def learn(*, policy, env, nsteps, total_timesteps, ent_coef, lr,
             log_interval=10, nminibatches=4, noptepochs=4, cliprange=0.2,
             save_interval=0, flags):
 
+
+    file_formatter = logging.Formatter('%(asctime)s %(message)s')
+    stats_logger = logging.getLogger('stats_logger')
+    stats_logger.setLevel(logging.INFO)
+    # logger handlers
+    stats_fh = logging.FileHandler(os.path.join(logger.get_dir(), 'results.log'))
+    stats_fh.setFormatter(file_formatter)
+    stats_logger.addHandler(stats_fh)
+
+    stats_logger = stats_logger
+    stats_interval = flags.stats_interval
+
+
+
     if isinstance(lr, float): lr = constfn(lr)
     else: assert callable(lr)
     if isinstance(cliprange, float): cliprange = constfn(cliprange)
@@ -295,6 +309,17 @@ def learn(*, policy, env, nsteps, total_timesteps, ent_coef, lr,
                     slices = (arr[mbflatinds] for arr in (obs, returns, masks, actions, values, neglogpacs))
                     mbstates = states[mbenvinds]
                     mblossvals.append(model.train(lrnow, cliprangenow, *slices, mbstates))
+                    envs_stats = runner.env.stats()
+                    #print(envs_stats)
+                    total = 0
+                    for i in range(0, 16):
+                        print(i)
+                        print(envs_stats[i].get('win_perc', None))
+                        total += envs_stats[i].get('win_perc', None)
+                        print("beep")
+                    print(envs_stats[0].get('win_perc', None))
+                    average = total / 16
+                    print("Average of numbers:", average)
                     #print("LEARN IN DOUBLE LOOP gggg nenvS=%s" % nsteps)
         model.curent_timestep += nbatch
         lossvals = np.mean(mblossvals, axis=0)
@@ -315,12 +340,63 @@ def learn(*, policy, env, nsteps, total_timesteps, ent_coef, lr,
             for (lossval, lossname) in zip(lossvals, model.loss_names):
                 logger.logkv(lossname, lossval)
             logger.dumpkvs()
+
+        if hasattr(runner.env, 'stats'):
+            envs_stats = runner.env.stats()
+            avg_stats = {}
+
+            # keys_of_lists: for each key related to a list has a list in which the i-th element counts the number
+            # of envs that has an i-th element in the list related to that key
+            keys_of_lists = {}  # type: dict[str, list[int]]
+            print("results")
+            print(envs_stats[0].get('win_perc', None))
+
+            # init average stats
+            for stats in envs_stats:
+                for key, val in stats.items():
+                    if not key in avg_stats:
+                        if isinstance(val, list):
+                            avg_stats[key] = []
+                            keys_of_lists[key] = []
+                        else:
+                            avg_stats[key] = 0
+
+            # collect stats for each environment
+            for stats in envs_stats:
+                for key, val in stats.items():
+                    if isinstance(val, list):
+                        avg_list = avg_stats[key]
+                        counts = keys_of_lists[key]
+                        len_diff = len(val) - len(counts)
+                        if len_diff > 0:
+                            counts.extend([0] * len_diff)
+                            avg_list.extend([0] * len_diff)
+                        for i, v in enumerate(val):
+                            counts[i] += 1
+                            avg_list[i] += v
+                    else:
+                        avg_stats[key] += val
+
+            # average stats across envs
+            for key, val in avg_stats.items():
+                if isinstance(val, list):
+                    counts = keys_of_lists[key]
+                    for i, v in enumerate(val):
+                        val[i] = v / counts[i]
+                else:
+                    avg_stats[key] = val / len(envs_stats)
+
+            avg_stats['global_t'] = model.curent_timestep
+            stats_logger.info(' '.join('%s=%s' % (key, val) for key, val in avg_stats.items()))
+
         do_save = (update % save_interval == 0) or (update == 1) or coordinator.should_stop()
         if do_save and logger.get_dir():
             checkdir = osp.join(logger.get_dir(), 'checkpoints')
             os.makedirs(checkdir, exist_ok=True)
             #savepath = osp.join(checkdir, '%.5i'%update)
-
+            envs_stats = runner.env.stats()
+            print(envs_stats)
+            print(envs_stats[0].get('win_perc', None))
             save_steps = update + nbatch
             print("Saving at t=%s" % model.curent_timestep)
             model.GSwrapper.set(model.sess, model.curent_timestep)
