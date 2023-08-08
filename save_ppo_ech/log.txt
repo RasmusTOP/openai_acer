@@ -1,1 +1,31 @@
 Logging to save_ppo_ech
+-------------------------------------
+| approxkl           | 0.02680234   |
+| clipfrac           | 0.006036377  |
+| eplenmean          | nan          |
+| eprewmean          | nan          |
+| explained_variance | 0.00624      |
+| fps                | 19           |
+| nupdates           | 600          |
+| policy_entropy     | 1.5941042    |
+| policy_loss        | 0.0036590002 |
+| serial_timesteps   | 1228800      |
+| time_elapsed       | 2.25e+04     |
+| total_timesteps    | 19660800     |
+| value_loss         | 0.08171505   |
+-------------------------------------
+-------------------------------------
+| approxkl           | 0.0031648402 |
+| clipfrac           | 0.011383057  |
+| eplenmean          | nan          |
+| eprewmean          | nan          |
+| explained_variance | 0.00475      |
+| fps                | 19           |
+| nupdates           | 700          |
+| policy_entropy     | 1.5915128    |
+| policy_loss        | 0.000924053  |
+| serial_timesteps   | 1433600      |
+| time_elapsed       | 1.92e+05     |
+| total_timesteps    | 22937600     |
+| value_loss         | 0.1700369    |
+-------------------------------------
