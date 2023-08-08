@@ -28,6 +28,8 @@ class RogueMonitor(Wrapper):
         if (self.total_steps - self.last_stats_log) >= self.stats_step:
             self.last_stats_log = self.total_steps
             stats = self.env.unwrapped.stats()
+            print("suck me dry")
+            print(stats)
             self.stats_logger.info(' '.join('%s=%s' % (key, val) for key, val in stats.items()))
         return res
 

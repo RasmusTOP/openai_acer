@@ -1,4 +1,3 @@
-model_checkpoint_path: "model-16220160"
-all_model_checkpoint_paths: "model-16154624"
-all_model_checkpoint_paths: "model-16187392"
-all_model_checkpoint_paths: "model-16220160"
+model_checkpoint_path: "model-16547840"
+all_model_checkpoint_paths: "model-16515072"
+all_model_checkpoint_paths: "model-16547840"

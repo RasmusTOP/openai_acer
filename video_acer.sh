@@ -1,3 +1,3 @@
 #!/bin/bash
 
-PYTHONPATH=. python envs/rogue/video_acer.py -f cfg_rogue_default.cfg $*
+PYTHONPATH=. python3 envs/rogue/video_acer.py -f cfg_rogue_default.cfg $*

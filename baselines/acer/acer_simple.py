@@ -353,7 +353,7 @@ class Acer():
                 # keys_of_lists: for each key related to a list has a list in which the i-th element counts the number
                 # of envs that has an i-th element in the list related to that key
                 keys_of_lists = {}  # type: dict[str, list[int]]
-
+                print(envs_stats[0].get('win_perc', None))
                 # init average stats
                 for stats in envs_stats:
                     for key, val in stats.items():
