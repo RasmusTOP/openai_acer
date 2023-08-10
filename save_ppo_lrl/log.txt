@@ -1,16 +1,1 @@
 Logging to save_ppo_lrl
--------------------------------------
-| approxkl           | 0.0054817526 |
-| clipfrac           | 0.004022217  |
-| eplenmean          | nan          |
-| eprewmean          | nan          |
-| explained_variance | 0.0011       |
-| fps                | 15           |
-| nupdates           | 1            |
-| policy_entropy     | 1.6071377    |
-| policy_loss        | -0.000670854 |
-| serial_timesteps   | 2048         |
-| time_elapsed       | 2.16e+03     |
-| total_timesteps    | 32768        |
-| value_loss         | 0.08972628   |
--------------------------------------
