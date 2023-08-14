@@ -1,1 +1,31 @@
 Logging to save_ppo_lrl
+--------------------------------------
+| approxkl           | 0.008390579   |
+| clipfrac           | 0.07766418    |
+| eplenmean          | nan           |
+| eprewmean          | nan           |
+| explained_variance | -0.000396     |
+| fps                | 25            |
+| nupdates           | 200           |
+| policy_entropy     | 1.434245      |
+| policy_loss        | -0.0017949035 |
+| serial_timesteps   | 409600        |
+| time_elapsed       | 6.06e+04      |
+| total_timesteps    | 6553600       |
+| value_loss         | 0.20755091    |
+--------------------------------------
+--------------------------------------
+| approxkl           | 0.007024265   |
+| clipfrac           | 0.08389282    |
+| eplenmean          | nan           |
+| eprewmean          | nan           |
+| explained_variance | 0.00639       |
+| fps                | 25            |
+| nupdates           | 300           |
+| policy_entropy     | 1.4060775     |
+| policy_loss        | -0.0022739824 |
+| serial_timesteps   | 614400        |
+| time_elapsed       | 1.89e+05      |
+| total_timesteps    | 9830400       |
+| value_loss         | 0.36196217    |
+--------------------------------------
